@@ -1,0 +1,11 @@
+AI Action Bridge,AI-actiebrug
+AI Action,AI-actie
+AI Action Role,AI-actierol
+Action Name,Actienaam
+Parameters (JSON),Parameters (JSON)
+Instructions for the assistant,Instructie voor de assistent
+Stable key the assistant passes as 'action' (e.g. create_quotation_line). Snake_case recommended; also becomes the document name.,Stabiele sleutel die de assistent als 'action' meegeeft (bv. create_quotation_line). Snake_case aanbevolen; wordt ook de documentnaam.
+Server Script (type API) that executes the action. Reads input from frappe.form_dict and puts the result in frappe.flags.ai_result.,"Serverscript (type API) dat de actie uitvoert. Leest invoer uit frappe.form_dict, zet het resultaat op frappe.flags.ai_result."
+What the action does and when/how to use it. Becomes the tool description the AI client receives.,Wat de actie doet en wanneer/hoe te gebruiken. Komt in de tool-omschrijving die de AI-client krijgt.
+Optional: JSON describing the expected 'arguments' (name/type/required/explanation). Informative for the assistant plus light validation.,Optioneel: JSON die de verwachte 'arguments' beschrijft (naam/type/verplicht/uitleg). Informatief voor de assistent.
+Optional: only these roles may use the action. Empty = all assistant users.,Optioneel: alleen deze rollen mogen de actie gebruiken. Leeg = alle gebruikers van de assistent.

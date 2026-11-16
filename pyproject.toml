@@ -1,0 +1,39 @@
+[project]
+name = "ai_action_bridge"
+authors = [
+    { name = "Astans Business Software B.V.", email = "info@astans.nl" }
+]
+description = "Expose Frappe Server Scripts as MCP tools through Frappe Assistant Core"
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "AGPL-3.0-or-later" }
+dynamic = ["version"]
+dependencies = [
+    # "frappe" and "frappe_assistant_core" are installed and managed by bench.
+]
+
+[project.urls]
+Source = "https://github.com/Astans-Business-Software-B-V/ai_action_bridge"
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0,<17.0.0"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "UP", "B", "RUF"]
+ignore = [
+    "E101", # indentation contains mixed spaces and tabs
+    "E501", # line too long
+    "W191", # indentation contains tabs
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "tab"

@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "autoname": "field:action_name",
+ "creation": "2026-06-04 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "action_name",
+  "title",
+  "enabled",
+  "column_break_basic",
+  "server_script",
+  "section_break_instruction",
+  "description",
+  "parameters",
+  "section_break_access",
+  "allowed_roles"
+ ],
+ "fields": [
+  {
+   "fieldname": "action_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Action Name",
+   "reqd": 1,
+   "unique": 1,
+   "description": "Stable key the assistant passes as 'action' (e.g. create_quotation_line). Snake_case recommended; also becomes the document name."
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "server_script",
+   "fieldtype": "Link",
+   "label": "Server Script",
+   "options": "Server Script",
+   "reqd": 1,
+   "description": "Server Script (type API) that executes the action. Reads input from frappe.form_dict and puts the result in frappe.flags.ai_result."
+  },
+  {
+   "fieldname": "section_break_instruction",
+   "fieldtype": "Section Break",
+   "label": "Instructions for the assistant"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description",
+   "reqd": 1,
+   "description": "What the action does and when/how to use it. Becomes the tool description the AI client receives."
+  },
+  {
+   "fieldname": "parameters",
+   "fieldtype": "Code",
+   "label": "Parameters (JSON)",
+   "options": "JSON",
+   "description": "Optional: JSON describing the expected 'arguments' (name/type/required/explanation). Informative for the assistant plus light validation."
+  },
+  {
+   "fieldname": "section_break_access",
+   "fieldtype": "Section Break",
+   "label": "Access"
+  },
+  {
+   "fieldname": "allowed_roles",
+   "fieldtype": "Table MultiSelect",
+   "label": "Allowed Roles",
+   "options": "AI Action Role",
+   "description": "Optional: only these roles may use the action. Empty = all assistant users."
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-16 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AI Action Bridge",
+ "name": "AI Action",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
